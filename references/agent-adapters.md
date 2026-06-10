@@ -4,7 +4,13 @@ Use this reference only when the user asks to install or adapt `xiaobai-review` 
 
 ## Codex / OpenAI Agents
 
-Install the whole folder at:
+Install with:
+
+```bash
+npx github:kquuen/xiaobai-review-skill
+```
+
+This installs the whole folder at:
 
 ```text
 C:\Users\Administrator\.codex\skills\xiaobai-review
@@ -22,7 +28,13 @@ Required files:
 
 ## Claude Code
 
-Convert the core instructions into a project or user rule file such as `CLAUDE.md` or `AGENTS.md`.
+Install with:
+
+```bash
+npx github:kquuen/xiaobai-review-skill -- --target claude --project .
+```
+
+This creates or updates a managed block in `CLAUDE.md`.
 
 Use this short header:
 
@@ -34,7 +46,13 @@ When reviewing an AI-built backend, use a beginner-friendly acceptance report wi
 
 ## Cursor
 
-Create `.cursor/rules/xiaobai-review.mdc` and paste the `SKILL.md` operating rules plus the 14-direction checklist.
+Install with:
+
+```bash
+npx github:kquuen/xiaobai-review-skill -- --target cursor --project .
+```
+
+This creates `.cursor/rules/xiaobai-review.mdc`.
 
 Suggested rule frontmatter:
 
@@ -54,6 +72,12 @@ alwaysApply: false
 
 ## ChatGPT Custom GPT or Generic Agent
 
+Export a ChatGPT instruction file with:
+
+```bash
+npx github:kquuen/xiaobai-review-skill -- --target chatgpt --project .
+```
+
 Paste `SKILL.md` into instructions. Upload or paste these references:
 
 - `audit-framework.md`
@@ -63,6 +87,30 @@ Paste `SKILL.md` into instructions. Upload or paste these references:
 Tell the agent: `Never mark a backend item passed unless it has an evidence level.`
 
 ## Gemini CLI / Windsurf / Other Rule-Based Agents
+
+Gemini:
+
+```bash
+npx github:kquuen/xiaobai-review-skill -- --target gemini --project .
+```
+
+This creates or updates `GEMINI.md`.
+
+Windsurf:
+
+```bash
+npx github:kquuen/xiaobai-review-skill -- --target windsurf --project .
+```
+
+This creates `.windsurf/rules/xiaobai-review.md`.
+
+Generic agents:
+
+```bash
+npx github:kquuen/xiaobai-review-skill -- --target agents --project .
+```
+
+This creates or updates `AGENTS.md`.
 
 Create a project instruction file supported by that tool, then paste:
 

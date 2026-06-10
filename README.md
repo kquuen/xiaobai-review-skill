@@ -90,15 +90,47 @@ xiaobai-review-skill/
     └── report-template.md
 ```
 
-## Install for Codex
+## Install
 
-Recommended install:
+Install for Codex:
 
 ```bash
 npx github:kquuen/xiaobai-review-skill
 ```
 
-This installs the Skill to your local Codex skills directory:
+Install for a specific AI coding tool:
+
+```bash
+npx github:kquuen/xiaobai-review-skill -- --target cursor --project .
+npx github:kquuen/xiaobai-review-skill -- --target claude --project .
+npx github:kquuen/xiaobai-review-skill -- --target agents --project .
+npx github:kquuen/xiaobai-review-skill -- --target gemini --project .
+npx github:kquuen/xiaobai-review-skill -- --target windsurf --project .
+npx github:kquuen/xiaobai-review-skill -- --target chatgpt --project .
+```
+
+Install all supported local formats:
+
+```bash
+npx github:kquuen/xiaobai-review-skill -- --target all --project .
+```
+
+Targets:
+
+| Target | What it creates |
+|---|---|
+| `codex` | `~/.codex/skills/xiaobai-review/` |
+| `cursor` | `.cursor/rules/xiaobai-review.mdc` |
+| `claude` | Adds a managed block to `CLAUDE.md` |
+| `agents` | Adds a managed block to `AGENTS.md` |
+| `gemini` | Adds a managed block to `GEMINI.md` |
+| `windsurf` | `.windsurf/rules/xiaobai-review.md` |
+| `chatgpt` | `xiaobai-review-chatgpt-instructions.md` |
+| `all` | Installs every supported local format |
+
+### Codex Install Details
+
+The default command installs the Skill to your local Codex skills directory:
 
 ```text
 ~/.codex/skills/xiaobai-review
@@ -135,6 +167,82 @@ Or in English:
 Use xiaobai-review to review this backend architecture.
 ```
 
+### Tool-Specific Install Details
+
+Cursor:
+
+```bash
+npx github:kquuen/xiaobai-review-skill -- --target cursor --project /path/to/project
+```
+
+Creates:
+
+```text
+/path/to/project/.cursor/rules/xiaobai-review.mdc
+```
+
+Claude Code:
+
+```bash
+npx github:kquuen/xiaobai-review-skill -- --target claude --project /path/to/project
+```
+
+Creates or updates a managed `xiaobai-review` block in:
+
+```text
+/path/to/project/CLAUDE.md
+```
+
+Generic agent instructions:
+
+```bash
+npx github:kquuen/xiaobai-review-skill -- --target agents --project /path/to/project
+```
+
+Creates or updates:
+
+```text
+/path/to/project/AGENTS.md
+```
+
+Gemini CLI:
+
+```bash
+npx github:kquuen/xiaobai-review-skill -- --target gemini --project /path/to/project
+```
+
+Creates or updates:
+
+```text
+/path/to/project/GEMINI.md
+```
+
+Windsurf:
+
+```bash
+npx github:kquuen/xiaobai-review-skill -- --target windsurf --project /path/to/project
+```
+
+Creates:
+
+```text
+/path/to/project/.windsurf/rules/xiaobai-review.md
+```
+
+ChatGPT Custom GPT:
+
+```bash
+npx github:kquuen/xiaobai-review-skill -- --target chatgpt --project /path/to/project
+```
+
+Exports:
+
+```text
+/path/to/project/xiaobai-review-chatgpt-instructions.md
+```
+
+Paste that file into a Custom GPT instruction field, or upload it as a reference file.
+
 ### Manual Install
 
 Copy this repository folder into your Codex skills directory:
@@ -153,12 +261,14 @@ C:\Users\Administrator\.codex\skills\xiaobai-review\references\...
 
 ## Use With Other AI Coding Tools
 
-For tools that do not support Codex Skill folders, adapt the instructions:
+For tools that do not support Codex Skill folders, use the matching `--target` installer:
 
-- Claude Code: copy the core rules into `CLAUDE.md` or `AGENTS.md`
-- Cursor: copy the rules into `.cursor/rules/xiaobai-review.mdc`
-- ChatGPT Custom GPT: paste `SKILL.md` into instructions and upload the reference files
-- Gemini CLI, Windsurf, or other agents: use the operating rules, 14-direction checklist, evidence levels, and report template as project instructions
+- Claude Code: `--target claude`
+- Cursor: `--target cursor`
+- ChatGPT Custom GPT: `--target chatgpt`
+- Gemini CLI: `--target gemini`
+- Windsurf: `--target windsurf`
+- Generic agents: `--target agents`
 
 See `references/agent-adapters.md` for more details.
 

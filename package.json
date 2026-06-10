@@ -1,7 +1,7 @@
 {
   "name": "xiaobai-review-skill",
-  "version": "0.1.0",
-  "description": "Install the xiaobai-review Codex skill for beginner-friendly backend architecture acceptance reviews.",
+  "version": "0.2.0",
+  "description": "Install xiaobai-review for Codex, Cursor, Claude Code, Gemini CLI, Windsurf, AGENTS.md, and ChatGPT instructions.",
   "bin": {
     "xiaobai-review-skill": "bin/install.js"
   },
