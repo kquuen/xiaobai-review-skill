@@ -1,0 +1,4 @@
+interface:
+  display_name: "Xiaobai Backend Review"
+  short_description: "Beginner-friendly backend acceptance with evidence levels."
+  default_prompt: "Use $xiaobai-review to review this backend architecture with 14 directions, risk levels, evidence levels, and copy-ready repair prompts."
