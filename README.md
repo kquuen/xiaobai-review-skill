@@ -92,18 +92,35 @@ xiaobai-review-skill/
 
 ## Install for Codex
 
-Copy this repository folder into your Codex skills directory:
+Recommended install:
 
-```text
-C:\Users\Administrator\.codex\skills\xiaobai-review
+```bash
+npx github:kquuen/xiaobai-review-skill
 ```
 
-The final structure should look like:
+This installs the Skill to your local Codex skills directory:
 
 ```text
-C:\Users\Administrator\.codex\skills\xiaobai-review\SKILL.md
-C:\Users\Administrator\.codex\skills\xiaobai-review\agents\openai.yaml
-C:\Users\Administrator\.codex\skills\xiaobai-review\references\...
+~/.codex/skills/xiaobai-review
+```
+
+On Windows, this usually resolves to:
+
+```text
+C:\Users\<you>\.codex\skills\xiaobai-review
+```
+
+If you use a custom Codex home, set `CODEX_HOME` first:
+
+```bash
+CODEX_HOME=/path/to/.codex npx github:kquuen/xiaobai-review-skill
+```
+
+PowerShell:
+
+```powershell
+$env:CODEX_HOME="C:\path\to\.codex"
+npx github:kquuen/xiaobai-review-skill
 ```
 
 Then ask Codex:
@@ -116,6 +133,22 @@ Or in English:
 
 ```text
 Use xiaobai-review to review this backend architecture.
+```
+
+### Manual Install
+
+Copy this repository folder into your Codex skills directory:
+
+```text
+C:\Users\Administrator\.codex\skills\xiaobai-review
+```
+
+The final structure should look like:
+
+```text
+C:\Users\Administrator\.codex\skills\xiaobai-review\SKILL.md
+C:\Users\Administrator\.codex\skills\xiaobai-review\agents\openai.yaml
+C:\Users\Administrator\.codex\skills\xiaobai-review\references\...
 ```
 
 ## Use With Other AI Coding Tools

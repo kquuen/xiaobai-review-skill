@@ -1,0 +1,22 @@
+{
+  "name": "xiaobai-review-skill",
+  "version": "0.1.0",
+  "description": "Install the xiaobai-review Codex skill for beginner-friendly backend architecture acceptance reviews.",
+  "bin": {
+    "xiaobai-review-skill": "bin/install.js"
+  },
+  "files": [
+    "SKILL.md",
+    "agents",
+    "references",
+    "bin"
+  ],
+  "keywords": [
+    "codex",
+    "skill",
+    "backend",
+    "architecture-review",
+    "vibe-coding"
+  ],
+  "license": "MIT"
+}
