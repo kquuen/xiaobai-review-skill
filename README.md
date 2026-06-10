@@ -92,27 +92,16 @@ xiaobai-review-skill/
 
 ## Install
 
-Install for Codex:
+Default install for Codex:
 
 ```bash
 npx github:kquuen/xiaobai-review-skill
 ```
 
-Install for a specific AI coding tool:
+Universal command:
 
 ```bash
-npx github:kquuen/xiaobai-review-skill -- --target cursor --project .
-npx github:kquuen/xiaobai-review-skill -- --target claude --project .
-npx github:kquuen/xiaobai-review-skill -- --target agents --project .
-npx github:kquuen/xiaobai-review-skill -- --target gemini --project .
-npx github:kquuen/xiaobai-review-skill -- --target windsurf --project .
-npx github:kquuen/xiaobai-review-skill -- --target chatgpt --project .
-```
-
-Install all supported local formats:
-
-```bash
-npx github:kquuen/xiaobai-review-skill -- --target all --project .
+npx github:kquuen/xiaobai-review-skill -- --target <target> --project <project-path>
 ```
 
 Targets:
@@ -128,19 +117,19 @@ Targets:
 | `chatgpt` | `xiaobai-review-chatgpt-instructions.md` |
 | `all` | Installs every supported local format |
 
-### Codex Install Details
+Examples:
 
-The default command installs the Skill to your local Codex skills directory:
-
-```text
-~/.codex/skills/xiaobai-review
+```bash
+npx github:kquuen/xiaobai-review-skill -- --target cursor --project .
+npx github:kquuen/xiaobai-review-skill -- --target all --project .
 ```
 
-On Windows, this usually resolves to:
+Notes:
 
-```text
-C:\Users\<you>\.codex\skills\xiaobai-review
-```
+- `--target codex` is the default and installs to `~/.codex/skills/xiaobai-review`.
+- `--project .` means the current project folder.
+- Use `--target all` to generate every supported local format.
+- For ChatGPT Custom GPT, paste the generated `xiaobai-review-chatgpt-instructions.md` into the instruction field or upload it as a reference file.
 
 If you use a custom Codex home, set `CODEX_HOME` first:
 
@@ -155,7 +144,7 @@ $env:CODEX_HOME="C:\path\to\.codex"
 npx github:kquuen/xiaobai-review-skill
 ```
 
-Then ask Codex:
+After installation, ask your AI coding tool:
 
 ```text
 使用 xiaobai-review 帮我验收这个后端。
@@ -166,82 +155,6 @@ Or in English:
 ```text
 Use xiaobai-review to review this backend architecture.
 ```
-
-### Tool-Specific Install Details
-
-Cursor:
-
-```bash
-npx github:kquuen/xiaobai-review-skill -- --target cursor --project /path/to/project
-```
-
-Creates:
-
-```text
-/path/to/project/.cursor/rules/xiaobai-review.mdc
-```
-
-Claude Code:
-
-```bash
-npx github:kquuen/xiaobai-review-skill -- --target claude --project /path/to/project
-```
-
-Creates or updates a managed `xiaobai-review` block in:
-
-```text
-/path/to/project/CLAUDE.md
-```
-
-Generic agent instructions:
-
-```bash
-npx github:kquuen/xiaobai-review-skill -- --target agents --project /path/to/project
-```
-
-Creates or updates:
-
-```text
-/path/to/project/AGENTS.md
-```
-
-Gemini CLI:
-
-```bash
-npx github:kquuen/xiaobai-review-skill -- --target gemini --project /path/to/project
-```
-
-Creates or updates:
-
-```text
-/path/to/project/GEMINI.md
-```
-
-Windsurf:
-
-```bash
-npx github:kquuen/xiaobai-review-skill -- --target windsurf --project /path/to/project
-```
-
-Creates:
-
-```text
-/path/to/project/.windsurf/rules/xiaobai-review.md
-```
-
-ChatGPT Custom GPT:
-
-```bash
-npx github:kquuen/xiaobai-review-skill -- --target chatgpt --project /path/to/project
-```
-
-Exports:
-
-```text
-/path/to/project/xiaobai-review-chatgpt-instructions.md
-```
-
-Paste that file into a Custom GPT instruction field, or upload it as a reference file.
 
 ### Manual Install
 
